@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather info</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <header>
+        <div class="wrap-1 ">
+            <div class="row align">
+                <div class="col-1 col-p-2 logo">
+                    <div>
+                        <span>The <br> DG <br> Enterprise</span>
+                    </div>
+                </div>
+                <div class="col-3 col-p-3 portal">    
+                     <h1>A Weather Portal
+                    <span> MAUSAM SHASTRA</span>
+                    </h1> 
+                </div>
+                <div class="col-4 col-p-5">
+                    <form action="." name="City_Search">
+                        <label> <input type="text" name="cityS" placeholder="Search City" aria-label="search==" aria-autocomplete="list" aria-controls aria-expanded="false">
+                            <button title="Enter Name of the city you desire to find 'Weather Details' about">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </label>
+                        <br>
+                        <span class="err2"></span>
+                    </form>
+                </div>
+
+                <div class="col-p-1 col-t-flex">    
+                    <button aria-label="Mobile_Menu" class="mob"><span></span><span></span><span></span></button>
+                    <div class="collapseMob flex align-center">
+                        <nav>
+                            <ul class="flex">
+                                <li><a href="#toDay">Today</a></li>
+                                <li><a href="#Forecast">5 Days</a></li>
+                                <li><a href="#Forecast">Forecast</a></li>
+                                <li><a href="#AQI">Air Quality</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="flex left">
+                        <span><i class="fa fa-globe" style="font-size:24px"></i></span>
+                        <span class="Country"> IN</span>
+                        <span class="caret"> °C</span>
+                    </div>
+                </div>
+                <div class="col-1 ">
+                    <span><i class="fa fa-bars" style="font-size:36px; color: #fff;"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="box1">
+        <div class="row">
+            <div class="col-2 col-p-2">
+                <form action="." name="c_location">
+                    <button type="button" class="cLocation" title="ClickHere For Temp of your Location">
+                        <i class="fa-solid fa-location-crosshairs"></i>
+                    </button>
+                </form>
+            </div>
+            <div class="col-4 current col-p-5"></div> 
+            <div class="col-4 cAQI col-p-5"></div>            
+        </div>
+    </div>
+    <div class="box2">
+        <nav>
+            <ul>
+                <li><a href="#toDay">Today</a></li>
+                <li><a href="#">3 Hours</a></li>
+                <li><a href="#Forecast">5 Days</a></li>
+                <li><a href="#Forecast">Forecast</a></li>
+                <li><a href="#">Monthly</a></li>
+                <li><a href="#AQI">Air Quality</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+ <main>
+    <div class="wrap-2">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-8 col-p-12">
+                    <div class="box3">
+                        <!-- <h2> City, State <span>As of <<Current IST>> </span></h2> -->
+                     </div>
+                     <div class="toDay" id="toDay">
+                           <h2 class="temp"> 6</h2>
+                           <h4 class="des">Partly Cloudy</h4> 
+                           <h3> <span>Day 7°</span>. <span> Night -4°</span> </h3>
+                     </div>
+                </div>
+                <div class="col-4 col-p-12">
+                    <div class="box4">
+                        <h2> Air Quality Index </h2>
+                     </div>
+                     <div class="Quality">
+                        <div class="circular" style="height: 150px; width: 150px;">
+                            <canvas id="dough">
+
+                            </canvas>
+                        </div>
+                        <div class="AQI" id="AQI">
+
+                        </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class="row"> 
+                <div class="col-8 col-p-12">
+                    <div class="box5">
+                        <h2> Hourly Weather -- <span class="City"> </span></h2>
+                     </div>
+                     <div class="foreCast" id="Forecast">
+                           <h2 class="temp"> 6</h2>
+                           <h3 class="des"> Partly Cloudy</h3> 
+                           <h4> <span>Day 7°</span>. <span> Night -4°</span> </h4>
+                     </div>
+                    </div>
+                
+                <div class="col-4 table">
+                    <div class="box6">
+                        <table>
+                            <tr>
+                                <th>
+                                    <td>
+                                        Qualitative Name
+                                    </td>
+                                
+                                                                
+                                    <td>
+                                        Index
+                                    </td>
+                                
+                                 
+                                    <td>
+                                        P Concentration (μg/m3)
+                                    </td>
+                                </th>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <td>
+                                        NO2
+                                    </td>
+                                </th>
+                                <th>
+                                    <td>
+                                        PM10
+                                    </td>
+                                </th>
+                                <th>
+                                    <td>
+                                        O3
+                                    </td>
+                                </th>
+                                <th>
+                                    <td>
+                                        PM25
+                                    </td>
+                                </th>                          
+                            </tr>                                 	 	
+                        </table>
+                        <h2> Air Quality Index </h2>
+                        <p>Possible values: 1, 2, 3, 4, 5.</p>
+                        <p>Where..</p>
+                        <p>1 = Good (NO2: 0-50)</p>
+                        <p>2 = Fair (NO2: 50-100)</p>
+                        <p>3 = Moderate (NO2: 100-200)</p>
+                        <p>4 = Poor (NO2: 200-400)</p>
+                        <p>5 = Very Poor (NO2: >400)</p>
+                     </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<div class="wrap-3">     
+    <footer>
+        <p>&copy;DG10 in 2022</p>
+        <div class="top active">
+            <a href="#Home">
+                <i class="fa-solid fa-angles-up"></i>
+            </a>
+        </div>
+    </footer>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../Weather New Template/Script/tip-top.js"></script>
+
+<script>
+"use strict";
+
+const apiKey = "c604fac4064506ff2e0ed9a28827621b";
+const time=new Date().toLocaleTimeString();
+
+document.querySelector('.cLocation')
+.addEventListener("click", function() 
+{
+    document.querySelector(".current").style = "display: inline";
+    document.querySelector(".cAQI").style = "display: inline";
+    navigator.geolocation.getCurrentPosition(success);
+    function success(positions)
+    {
+        var lat1 = positions.coords.latitude;
+        var lon1 = positions.coords.longitude;
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat1}&lon=${lon1}&APPID=${apiKey}`)
+        .then(i => i.json())
+        .then(i =>
+        {
+            console.log(i.name);
+            document.querySelector('.current').innerHTML = `Temp for Your Current Location ${i.name} City: ${(i.main.temp - 273.15).toFixed(2)}`;
+        });
+        fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat1}&lon=${lon1}&appid=${apiKey}`)
+        .then(res => res.json())
+        .then(i =>
+        {
+            console.log(i.list);
+            i.list.forEach((j, k) =>
+            {
+                for (let l in j)
+                {
+                    document.querySelector('.cAQI').innerHTML = `AQI for Your Current Location is ${j.components.pm10}`;
+                }
+            });
+        });
+    }
+});
+
+document.City_Search.addEventListener("submit", function(e)
+{
+    e.preventDefault();
+    document.querySelector(".err2").innerHTML = "";
+    document.querySelector(".box3").innerHTML = "";
+    document.querySelector(".toDay").innerHTML = "";
+
+    // document.querySelector(".box5").innerHTML = "";
+    document.querySelector(".foreCast").innerHTML = "";
+
+    let city = this.cityS.value;
+   
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${apiKey}`)
+    .then(res => res.json())
+    .then(mausam => 
+    {
+        if(mausam.cod=="404")
+        {
+            document.querySelector(".err2").innerHTML="No City found";
+            document.querySelector(".err2").style="color:red; display: inline";
+        }
+
+        document.querySelector('.box3').innerHTML = `<h2> ${mausam.name} as of ${time} (+${(mausam.timezone)/3600} HOURS) </h2>`
+
+        document.querySelector('.Country').innerHTML= `<span> ${mausam.sys.country} </span>`
+
+        document.querySelector(".toDay").innerHTML=
+        `<h2>${(mausam.main.temp-273.15).toFixed(2)}&deg;C</h2>                        
+        <hr>
+        <div class="flex">
+            <div>
+                <h3><i class="fa-solid fa-wind"></i> <span style="color: maroon;"> ${mausam.wind.speed} mtr/sec </span></h3>     
+                <h3><i class="fa-solid fa-droplet"></i> <span style="color: maroon;"> ${mausam.main.humidity}% </span></h3>
+                <hr>
+            </div>
+                        
+            <div>
+                <h3> <i class="fa-solid fa-temperature-arrow-up"></i> <span style="color: maroon;"> ${(mausam.main.temp_max-273).toFixed(2)}&deg;C</span></h3>
+                <h3> <i class="fa-solid fa-temperature-arrow-down"></i> <span style="color: maroon;"> ${(mausam.main.feels_like-273).toFixed(2)}&deg;C</span></h3>
+            </div>
+        </div>
+
+        <div class="flex">
+            <div>
+                <h3>Sunrise: <i class="fa-regular fa-sun"></i> <span style="color: maroon;"> ${(new Date(Number(mausam.sys.sunrise+"000")).toLocaleTimeString())}</span></h3>
+                <h3>Sunset: <i class="fa-solid fa-sun"></i> <span style="color: maroon;"> ${(new Date(Number(mausam.sys.sunset+"000")).toLocaleTimeString())}</span></h3>
+            </div>
+            <div>
+                <h3>Weather: <span style="color: maroon;"> ${mausam.weather[0].main}</span></h3>
+                <h3>Description: <span style="color: maroon;"> ${mausam.weather[0].description}</span></h3>
+            </div>
+        </div>`;
+
+        fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${mausam.coord.lat}&lon=${mausam.coord.lon}&appid=${apiKey}`)  
+        .then(p => p.json())
+        .then(m =>
+        {
+            document.querySelector('.box4').innerHTML = `<h2> AQI for ${mausam.name} </h2>`;
+            console.log(m.list);
+            m.list.forEach(j =>
+            { 
+
+                const aqi=j.main.aqi;
+                let color="blue";
+                switch(aqi)
+                {
+                    case  1: color='green'; break;
+                    case  2: color='pink'; break;
+                    case  3: color='yellow'; break;
+                    case  4: color='orange'; break;
+                    case  5: color='red'; break;
+                };
+
+                console.log(aqi, color);
+                document.querySelector('.AQI').innerHTML=
+                `<h3>${(new Date(Number(j.dt+"000")))}</h3>
+                <br>
+                <div>
+                    <h2><span style="color:maroon; font-size: 40px;">${aqi}</span></h2>
+                    <h3>PM10 (Coarse Particulate Matter): <span style="color:maroon; font-size: 28px;">${j.components.pm10}</span></h3>
+                    <h3>CO (Carbon monoxide): <span style="color:maroon;">${j.components.co}</span></h3>
+                    <h3>NH3 (Ammonia): <span style="color:maroon;">${j.components.nh3}</span></h3>
+                    <h3>NO (Nitrogen monoxide): <span style="color:maroon;">${j.components.no}</span> </h3>
+                    <h3>NO2 (Nitrogen dioxide): <span style="color:maroon;">${j.components.no2}</span></h3>
+                    <h3>O3 (Ozone): <span style="color:maroon;">${j.components.o3}</span></h3>
+                    <h3>PM2.5 (Fine particles matter): <span style="color:maroon;">${j.components.pm2_5}</span></h3>
+                    <h3>SO2 (Sulphur dioxide): <span style="color:maroon;">${j.components.so2}</span></h3>
+                    <h3><span style="color:maroon;">All values are Concentrated and in unit "μg/m3"</span></h3>
+                </div>`;
+            
+                /*  document.getElementById( "sector-chart" ).remove();
+                    let canvas = document.createElement('canvas');
+                    canvas.setAttribute('id','chart');
+                    canvas.setAttribute('width','300');
+                    canvas.setAttribute('height','100');
+                    document.querySelector('#chart-container').appendChild(canvas)*/
+
+                let chartStatus = Chart.getChart("dough"); // <canvas> id
+                if (chartStatus != undefined) 
+                {
+                    chartStatus.destroy();
+                }
+
+                var graph = document.getElementById("dough").getContext("2d");
+                                
+                var myNewChart = new Chart(graph,
+                {
+                    type: 'doughnut',
+                    data:
+                    {
+                        labels: ['AQI', '',],
+                        datasets:
+                        [{
+                            label: 'Air Quality',
+                            backgroundColor:[color, 'lightyellow'],
+                            data: [aqi, 5-aqi],
+                            borderWidth: 3,
+                            hoverOffset: 7
+                        }]
+                    },
+                });
+
+            });
+        });
+    });
+        
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
+    .then(res => res.json())
+    .then(i =>
+    {        
+        let mausam = i.list;
+        console.log(mausam);
+        
+        // document.querySelector('.box5').innerHTML = `<h2> Forecast for ${city} as of ${time} </h2>`
+        document.querySelector('.City').innerHTML= `<span> ${city} </span>`
+
+        mausam.forEach(j => 
+        {
+            let dates = (new Date(Number(j.dt+"000")).toLocaleDateString());
+            console.log(dates);
+            document.querySelector('.foreCast').innerHTML +=
+            `<div class="col-12">
+                <div class="head flex">
+                     <div class="head1">
+                        <h2>${j.dt_txt}</h2>
+                        <hr>
+                    </div>
+                    <div class="head2">
+                        <span><img src="https://openweathermap.org/img/wn/${j.weather[0].icon}@2x.png"></span>              
+                    </div>
+                </div>
+                    
+                <div class="main flex">  
+                    <div class="main1">
+                        <h2><i class="fa-solid fa-temperature-arrow-up"></i> ${(j.main.temp - 273.15).toFixed(2)}</h2>
+                        <h2><i class="fa-solid fa-droplet"></i> ${j.main.humidity}%</h2>
+                    </div>
+                    <div class="main2">
+                        <h2><i class="fa-solid fa-temperature-arrow-down"></i> ${(j.main.feels_like - 273.15).toFixed(2)}</h2>
+                        <h2><i class="fa-solid fa-cloud-sun"></i> ${j.clouds.all}%</h2>
+                    </div>    
+                </div>
+                <div class="collapse text-style">
+                    <a href=""> </a>
+                    <div class="subMain flex" >
+                    <h3>Part of the Day: <span> ${j.sys.pod}</span></h3>
+                    <hr>
+                    <h3>Avg. Visibility: <span> ${j.visibility} (in Mtrs)</span></h3>
+                    <hr>
+                    <h3>Weather condition within the group: <span>${j.weather[0].description}</span></h3>
+                    <hr>
+                    <h3>Group of weather parameters:<span> ${j.weather[0].main}</span></h3>
+                    <hr>
+                    <h3>Wind speed: <i class="fa-solid fa-wind"></i> <span>${j.wind.speed} m/s</span></h3>
+                    <hr>
+                    <h3>Wind direction: <span>${j.wind.deg} degrees</span></h3>
+                    <hr>
+                    <h3>Wind gust: <i class="fa-solid fa-wind-warning"></i> <span>${j.wind.gust} m/s</span></h3>
+                </div>
+            </div>        
+        </div>`;
+    
+        $(".collapse a").click(function(e)
+        {
+            e.preventDefault();
+            $(this).next("div").slideToggle();
+            $(this).toggleClass("active");
+        });
+        
+        });
+    });
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-tWHlutFnuG0C6nQRlpvrEhE4QpkG1nn2MOUMWmUeRePl4e3Aki0VB6W1v3oLjFtd0hVOtRQ9PHpSfN6u6/QXkQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./Script/tip-top.js"></script>
+</body>
+</html>
