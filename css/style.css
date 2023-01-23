@@ -51,7 +51,7 @@ header{position: relative;}
 .wrap-1 .col-1{ padding: 0 20px}
 .align .col-1 div{border: #000; background: #fff; color: rgb(115, 68, 116); font-weight: 700;}
 .wrap-1 .col-3 {margin: 0 -20px 0 5px;}
-.wrap-1 .col-3 h1 span{ border-left: 2px solid white; background-color: #0a85b5; color: inherit; margin: 0 5px; padding-left: 4px; }
+.wrap-1 .col-3 h1 span{ border-left: 2px solid white; background-color: #0a85b5; color: inherit; margin-left: 4px; padding-left: 4px; }
 .wrap-1 .col-3 h1{font-size: 18px; }
 .wrap-1 .col-4 label{ margin-left: 60px; position: relative;}
 .wrap-1 .col-4 input{ background: rgb(143, 104, 143); border: 1px white;
@@ -91,7 +91,7 @@ header{position: relative;}
 .box2 nav >ul{ display: flex; padding: 0;}
 .box2 nav> ul>li{ margin-left: 120px;}
 .box2 nav ul li a{ color: #fff; padding: 10px 15px; display: block;}
-.box2 ul li:hover>a { border-bottom: 3px solid white; transition: all 0.5s;}
+.box2 ul li:hover>a { border-bottom: 2px solid white; transition: all 0.5s;}
  main{ background: rgba(82, 69, 81, 0.5);}
 
  .wrap-2 .col-8 {
@@ -102,24 +102,33 @@ header{position: relative;}
     border-radius: 20px;}
  .wrap-2 .col-8 .box3{ background: rgba(50, 30, 49, 0.5); padding: 26px 16px;}
  .wrap-2 .col-8 .box3 h2{ color: #fff;}
- .wrap-2 .col-8 .box3 span{ font-weight: 400;}
+ .wrap-2 .col-8 .box3 span{ font-weight: 200;}
  .wrap-2 .col-8 .toDay{
                     padding: 26px 16px;
                     text-shadow: 0 0 5px #17243280;}
-  .wrap-2 .col-8 .toDay h2{ font-size: 88px; color: #fff; margin-left: 10px; padding: 5px; }                     
-  .wrap-2 .col-8 .toDay h3{font-size: 28px;color: #fff; margin-left: 10px; padding: 10px;}
+  .wrap-2 .col-8 .toDay h2{ font-size: 72px; color: #fff; margin-left: 10px; padding: 5px; }                     
+  .wrap-2 .col-8 .toDay h3{font-size: 24px; font-weight: 550; color: #fff; margin-left: 10px; padding: 10px; }
   .wrap-2 .col-8 .toDay h4{ font-size: 22px;color: #fff; margin-left: 10px; padding: 10px;}
+  .toDay h3 span {color: maroon}
+
+  .AQI h3{font-weight: 400; font-size: 16px;}
+  .AQI h3 span {color: maroon; font-weight: 400;}
+
 
   .wrap-2 .col-4 {margin: 10px 0 10px 0px; border-radius: 10px; background-color: #fff; padding: 15px 15px;}
 
   .wrap-2 .col-8 .box5{ background: rgba(50, 30, 49, 0.5); padding: 26px 16px;}
   .wrap-2 .col-8 .box5 h2{ color: #fff;  }
-  .wrap-2 .col-8 .box3 span{ font-weight: 400;}
+  .wrap-2 .col-8 .box3 span{ font-weight: 200;}
   .wrap-2 .col-8 .foreCast{
     padding: 26px 16px;
     text-shadow: 0 0 2px #17243280;}
-  .wrap-2 .col-8 .foreCast h2{ font-size: 28px; color: #fff; margin-left: 10px; padding: 10px; }                     
-  .wrap-2 .col-8 .foreCast h3{font-size: 26px;color: rgba(50, 30, 49); margin-left: 10px; padding: 10px;}
+  .wrap-2 .col-8 .foreCast h2{ font-size: 22px; color: #fff; margin-left: 10px; padding: 10px; }                     
+  .wrap-2 .col-8 .foreCast h3{font-size: 16px;
+    color: rgba(50, 30, 49);
+    margin-left: 10px;
+    padding: 10px;
+    font-weight: 400;}
   .wrap-2 .col-8 .foreCast h4{ font-size: 22px;color: #fff; margin-left: 10px; padding: 10px;}
 
     .collapse{ background: #fff8;
@@ -128,7 +137,7 @@ header{position: relative;}
       padding: 7px;
       border-radius: 5px;}
 
-    .collapse a{ display: block; color: #000; font-weight: bold; position: relative;
+    .collapse a{ display: block; color: #000; position: relative;
       bottom: 17px;}
     .collapse a::after
     {
@@ -224,10 +233,6 @@ background: #2c62de;
 
 .box2{display: none;}
 
-/* .box2 nav ul li::nth-child(1){display: none;}
-.box2 nav ul li::nth-child(4){display: none;}
-.box2 nav ul li::nth-child(5){display: none;} */
-
 .col-p-1 .collapseMob nav ul{display: inline-block;}
 nav ul li a{
         line-height: 20px;
@@ -248,13 +253,13 @@ nav ul li a{
 
 .wrap-2 .col-8 .foreCast{padding: 15px 5px;}
 .wrap-2 .col-8 .foreCast h2 {font-size: 20px;
-  padding: 0px;}
+  padding: 0px; font-weight: 200;}
 .wrap-2 .col-8 .foreCast h3 {padding: 0; font-size: 18px;}
 .wrap-2 .col-8 .foreCast h4 {padding: 0; font-size: 16px}
 
 .wrap-2 .row .table{display: none;}
 
-.align .col-1 div {font-weight: 400;}
+.align .col-1 div {font-weight: 200;}
 
 .wrap-1 .row .cLocation i{font-size: 18px;}
 
@@ -269,11 +274,8 @@ h2 span{ font-size: 24px;}
 
 .wrap-1{padding: 5px 0px;}
 .wrap-1 .logo{padding: 0 0px;}
-
 .wrap-1 .portal{margin: 0 5px;}
-
 .wrap-1 .col-4 label {margin-left: 0px;}
-
 .wrap-1 .col-4 input{border-radius: 5px;
   width: 127px;
   font-size: 17px;
@@ -281,10 +283,7 @@ h2 span{ font-size: 24px;}
   padding: 3px;
   text-align: revert;}
 
-  .wrap-1 .col-4 label button {
-    font-size: 16px;
-  line-height: 24px;
-padding: 0 0 0 55px;}
+.wrap-1 .col-4 label button {font-size: 16px; line-height: 24px; padding: 0 0 0 55px;}
 .row .col-p-1{ flex-basis: 8.33%; max-width: 8.33%;}
 .row .col-p-2{ flex-basis: 16.66%; max-width: 16.66%;}
 .row .col-p-3{ flex-basis: 25%; max-width: 25%;}
@@ -304,25 +303,14 @@ padding: 0 0 0 55px;}
 
 .wrap-1 .row.align .left{display: none;}
 .wrap-1 .row.align .fa-bars{display: none;}
-
-
 .wrap-2 .row .Search
 {
   margin-top: 0px;
   margin-right: 0;
   margin-bottom: 0px;
   margin-left: 0px;
-  width: auto;
-}
-  
-.err2
-{
-display: none;}
-   
-.cLocation{
-font-size: 16px;
-margin: 5px 2px 5px 2px;}
-
+  width: auto;}
+.err2 {display: none;}
+.cLocation{font-size: 16px; margin: 5px 2px 5px 2px;}
 .box1 .row .col-2{display: block; justify-content: end;}
-
 }
